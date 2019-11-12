@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	$.ajax({
+    url: "https://localhost:44390/api/Producto/AgregarProducto",
+    type: "POST",
+    dataType: "json",
+    data: {
+    	CodigoProducto : "111",
+    	NombreProducto : "Salvaje Luisk 17cm",
+    	PrecioProducto : 17000
+    },
+  
+    
+    })
+   .done(function(x) {
+ 	console.log(x);
+   })
+   .fail(function(x){
+ 	console.log(x);
+   });
+	})
+</script>
+</head>
+<body>
+
+</body>
+</html>

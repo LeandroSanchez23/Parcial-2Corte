@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "cb9023d0-b052-47f2-b87b-6b78df4ca659",
+		"name": "LuiskDDD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GuardarProducto",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "745b1923-e5c3-4ae8-9d49-f060dd3beb28",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"CodigoProducto\" : \"222\",\n    \"NombreProducto\" : \"Salvaje Luisk 13cm\",\n    \"PrecioProducto\" : 17000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44390/api/Producto/AgregarProducto",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"api",
+						"Producto",
+						"AgregarProducto"
+					]
+				},
+				"description": "aqui guadamos productos"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44390/api/Producto/ListarProductos",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"api",
+						"Producto",
+						"ListarProductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Ingrediente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"CodigoIngrediente\" : \"P-02\",\n    \"NombreIngrediente\" : \"Pan\",\n    \"UnidadDeMedidaIngrediente\" : \"unidad\",\n    \"PrecioIngrediente\" : 10000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44390/api/Ingrediente/AgregarIngrediente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"api",
+						"Ingrediente",
+						"AgregarIngrediente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Receta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"NombreReceta\" : \"Receta Perro Luisk 1\",\n\t\"CodigoProducto\" : \"111\",\n\t\"ListaIngredientes\" : [\n\t\t{\n\t\t\t\"CodigoProducto\" : \"Q-01\",\n\t\t\t\"CantidadPorProducto\" : 200\n\t\t},\n\t\t{\n\t\t\t\"CodigoProducto\" : \"P-02\",\n\t\t\t\"CantidadPorProducto\" : 10\n\t\t},\n\t\t{\n\t\t\t\"CodigoProducto\" : \"P-02\",\n\t\t\t\"CantidadPorProducto\" : 20\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44390/api/Producto/AgregarReceta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44390",
+					"path": [
+						"api",
+						"Producto",
+						"AgregarReceta"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
